@@ -1,5 +1,4 @@
 
-
 # Get the current date and time for the output file name
 TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
 
@@ -10,7 +9,7 @@ OUTPUT_FILE="scan_files/trivy_results_$TIMESTAMP.txt"
 mkdir -p scan_files
 
 # Define the list of images to scan
-IMAGES=("ghcr.io/saleor/saleor:3.20" "ghcr.io/saleor/saleor-dashboard" "axllent/mailpit" "postgres:15-alpine" "redis:7.0-alpine")
+IMAGES=("ghcr.io/saleor/saleor:latest" "ghcr.io/saleor/saleor-dashboard" "axllent/mailpit" "postgres:15-alpine" "redis:7.0-alpine")
 
 # Loop through each image and scan it using Trivy, saving output to the file
 for IMAGE in "${IMAGES[@]}"; do
